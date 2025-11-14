@@ -55,9 +55,9 @@ export default function Home() {
               <div className="absolute right-0 top-0 w-60 h-60 rounded-full bg-white/5 blur-2xl" />
 
               {/* floating product cards */}
-              <FloatingCard src="/images/gold-ring.jpg" title="Classic Gold Ring" price="$199" className="absolute left-8 top-8 w-48" initial={{ rotate: -4 }} />
-              <FloatingCard src="/images/emerald-pendant.jpg" title="Emerald Pendant" price="$299" className="absolute right-8 top-12 w-52" initial={{ rotate: 6 }} delay={0.06} />
-              <FloatingCard src="/images/silver-bangle.jpg" title="Silver Bangle" price="$79" className="absolute left-20 bottom-10 w-44" initial={{ rotate: -2 }} delay={0.12} />
+              <FloatingCard src="/images/gold-ring.jpg" title="Classic Gold Ring" price="Rs.199" className="absolute left-8 top-8 w-48" initial={{ rotate: -4 }} />
+              <FloatingCard src="/images/emerald-pendant.jpg" title="Emerald Pendant" price="Rs.299" className="absolute right-8 top-12 w-52" initial={{ rotate: 6 }} delay={0.06} />
+              <FloatingCard src="/images/silver-bangle.jpg" title="Silver Bangle" price="Rs.79" className="absolute left-20 bottom-10 w-44" initial={{ rotate: -2 }} delay={0.12} />
 
               <motion.div initial={{ scale: 0.98 }} animate={{ scale: 1 }} transition={{ duration: 0.8 }} className="w-56 h-56 rounded-xl overflow-hidden border border-white/8 shadow-2xl bg-white flex items-center justify-center">
                 <img src="/images/diamond-studs.jpg" alt="Diamond studs" className="object-cover w-full h-full" />
@@ -98,7 +98,7 @@ export default function Home() {
                   <div className="text-xs text-gray-600 mt-1">{p.karat} • {p.category}</div>
                 </div>
                 <div className="text-right">
-                  <div className="font-bold">{`$${p.price.toFixed(0)}`}</div>
+                  <div className="font-bold">{`Rs.${p.price.toFixed(0)}`}</div>
                   <div className="text-xs text-gray-500">Stock: {p.stock}</div>
                 </div>
               </div>

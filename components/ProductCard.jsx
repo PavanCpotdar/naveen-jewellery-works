@@ -13,7 +13,7 @@ export default function ProductCard({ product }) {
 
             <div className="mt-4 flex items-center justify-between">
                 <div>
-                    <div className="text-xl font-bold">${product.price.toFixed(2)}</div>
+                    <div className="text-xl font-bold">Rs{product.price.toFixed(2)}</div>
                     <div className="text-xs text-gray-500">Stock: {product.stock}</div>
                 </div>
                 <button className="px-3 py-1 rounded-md bg-brand-blue text-white text-sm">View</button>
