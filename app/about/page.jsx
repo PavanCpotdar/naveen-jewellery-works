@@ -92,9 +92,9 @@ export default function About() {
 
                     <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
                         {[
-                            { name: 'Anita Sharma', role: 'Founder & Designer', img: '/images/team-1.jpg' },
-                            { name: 'Ravi Patel', role: 'Head of Craft', img: '/images/team-2.jpg' },
-                            { name: 'Maya Desai', role: 'Operations', img: '/images/team-3.jpg' }
+                            { name: 'Naveen C Potdar', role: 'Founder & Designer', img: '/images/account.png' },
+                            { name: 'Rukmini C Potdar', role: 'Head of Craft', img: '/images/account.png' },
+                            { name: 'Poornima C Potdar', role: 'Operations', img: '/images/account.png' }
                         ].map((t, i) => (
                             <motion.div key={t.name} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.06 * i }} className="bg-white text-black border rounded-2xl p-6 text-center shadow-lg">
                                 <div className="mx-auto w-28 h-28 rounded-full overflow-hidden border mb-4 flex items-center justify-center bg-gray-100">

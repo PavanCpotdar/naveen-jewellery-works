@@ -1,6 +1,7 @@
 import './globals.css'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import ToastProvider from '@/components/ToastProvider'
 
 export const metadata = {
   title: 'Naveen Jewellery Works',
@@ -22,7 +23,7 @@ export default function RootLayout({ children }) {
         <main className="flex-1 container mx-auto px-4 pt-24 pb-10">
           {children}
         </main>
-
+        <ToastProvider />
         {/* Sticky Footer */}
         <Footer />
       </body>

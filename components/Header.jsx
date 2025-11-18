@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import LogoImage from "../public/images/Logo-white.png"
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -23,38 +24,43 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-black/90 backdrop-blur-md shadow-lg shadow-yellow-500/10 border-b border-yellow-400/10'
-          : 'bg-black border-b border-yellow-500/20'
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
+        ? 'bg-black/90 backdrop-blur-md shadow-lg shadow-yellow-500/10 border-b border-yellow-400/10'
+        : 'bg-black border-b border-yellow-500/20'
+        }`}
     >
       <div className="container mx-auto flex justify-between items-center px-5 py-3">
         {/* Brand */}
-        <motion.div
-          initial={{ x: -20, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="flex items-center gap-3"
+        <Link
+          href={'/'}
+          className="relative group text-white tracking-wide hover:text-yellow-400 transition-colors"
         >
-          {/* Animated gold glow logo */}
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="relative w-12 h-12 rounded-full bg-linear-to-br from-yellow-300 to-yellow-500 text-black flex items-center justify-center font-extrabold text-lg shadow-[0_0_12px_rgba(250,204,21,0.5)]"
+            initial={{ x: -20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-3 cursor"
           >
-            {/* <span className="animate-pulse-slow">NJ</span> */}
-            <img src='./images/Logo-white.png' className="object-cover w-full h-full rounded-4xl"  />
-          </motion.div>
+            {/* Animated gold glow logo */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="relative w-12 h-12 rounded-full bg-linear-to-br from-yellow-300 to-yellow-500 text-black flex items-center justify-center font-extrabold text-lg shadow-[0_0_12px_rgba(250,204,21,0.5)]"
+            >
+              {/* <span className="animate-pulse-slow">NJ</span> */}
+              {/* <img src='./images/Logo-white.png' className="object-cover w-full h-full rounded-4xl"  /> */}
+              <Image src={LogoImage} alt='Logo Image' width={100} height={100} className="rounded-4xl" />
+            </motion.div>
 
-          <div>
-            <h1 className="text-lg font-bold text-yellow-400 leading-tight tracking-wide">
-              Naveen Jewellery Works
-            </h1>
-            <p className="text-xs text-gray-300 -mt-0.5">Timeless Craft • Modern Touch</p>
-          </div>
-        </motion.div>
+            <div>
+              <h1 className="text-lg font-bold text-yellow-400 leading-tight tracking-wide cursor">
+                Naveen Jewellery Works
+              </h1>
+              <p className="text-xs text-gray-300 -mt-0.5 cursor">Timeless Craft • Modern Touch</p>
+            </div>
+          </motion.div>
+        </Link>
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium">
@@ -100,6 +106,6 @@ export default function Header() {
           </details>
         </div>
       </div>
-    </header>
+    </header >
   )
 }
