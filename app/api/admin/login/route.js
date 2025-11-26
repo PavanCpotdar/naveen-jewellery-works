@@ -23,9 +23,9 @@ export async function POST(req) {
         console.log(user, "user");
 
 
-        if (!user || !user.password) return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 })
+        if (!user || !user.passwordHash) return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 })
 
-        const ok = await bcrypt.compare(password, user.password)
+        const ok = await bcrypt.compare(password, user.passwordHash)
         if (!ok) return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 })
 
         const ADMIN_TOKEN = process.env.ADMIN_TOKEN || Math.random().toString(36).slice(2)

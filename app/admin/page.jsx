@@ -119,7 +119,7 @@ export default function AdminDashboard() {
                             <div key={p._id} className="p-3 border rounded bg-white">
                                 <img src={p.image || "/images/diamond-studs.jpg"} alt={p.name} className="w-full h-36 object-cover rounded" />
                                 <h3 className="font-semibold mt-2">{p.name}</h3>
-                                <div className="text-sm text-slate-600">${p.price}</div>
+                                <div className="text-sm text-slate-600">Rs.{p.price}</div>
                                 <div className="text-xs mt-1">{p.category}</div>
                             </div>
                         ))}

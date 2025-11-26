@@ -1,16 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
-export default function AdminLoginPage() {
+export default function AdminLoginPage({ from = "/admin" }) {
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const router = useRouter();
-    const params = useSearchParams();
-    const from = params?.get("from") || "/admin";
 
     async function submit(e) {
         e.preventDefault();
@@ -23,7 +21,6 @@ export default function AdminLoginPage() {
                 credentials: "same-origin",
             });
 
-            // try parse safely
             let data;
             try {
                 data = await res.json();
@@ -39,7 +36,6 @@ export default function AdminLoginPage() {
             }
 
             toast.success("Signed in — redirecting…");
-            // small delay so user sees toast (optional)
             setTimeout(() => router.push(from), 300);
         } catch (err) {
             console.error(err);
@@ -93,8 +89,19 @@ export default function AdminLoginPage() {
 function Spinner() {
     return (
         <svg className="animate-spin w-5 h-5 text-black" viewBox="0 0 24 24" fill="none" aria-hidden>
-            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+            <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+            ></circle>
+            <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+            ></path>
         </svg>
     );
 }
